@@ -33,25 +33,29 @@ $(document).ready(function() {
     $('.play-pause-btn').click(function() {
         if (!timerRunning) {
             startCountdown();
-            $('.play-pause-btn').html('<i class="fa fa-pause fa-2x"></i>');
+            $(this).html('<i class="fa fa-pause fa-2x"></i>');
         }
 
         else {
             stopCountdown();
-            $('.play-pause-btn').html('<i class="fa fa-play fa-2x"></i>');
+            $(this).html('<i class="fa fa-play fa-2x"></i>');
         }
     });
 
     $('.swap-btn').click(function() {
         if (!timerRunning) {
-            $('.swap-btn').addClass('animated shake');
-            $('.swap-btn').one('webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend', function() {
-                $('.swap-btn').removeClass('animated shake');
+            $(this).addClass('animated shake');
+            $(this).one('webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend', function() {
+                $(this).removeClass('animated shake');
             });
             return;
         }
 
         switchPlayer();
+    });
+
+    $('.spacebar-indicator').click(function() {
+        $(this).fadeOut(150);
     });
 
     $('.theme-select-btn').click(function() {
@@ -80,7 +84,12 @@ $(document).ready(function() {
             });
 
             $(this).click(function() {
-                $(this).replaceWith('<input type="text" class="edit-input"/>');
+                var value = $(this).text();
+
+                if ($(this).hasClass('main-value')) 
+                    $(this).replaceWith('<input type="text" class="main-edit-input edit-input" placeholder="' + value.toString() + '"/>');
+                else if ($(this).hasClass('bottom-value'))
+                    $(this).replaceWith('<input type="text" class="bottom-edit-input edit-input" placeholder="' + value.toString() + '"/>');
             });
         }
     });
