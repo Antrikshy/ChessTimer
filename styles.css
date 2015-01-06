@@ -1,3 +1,8 @@
+/*TODO: Remove later*/
+.pre-release-indicator {
+    font-size: 40%;
+}
+
 html, body {
     text-align: center;
     font-weight: 100;
@@ -103,7 +108,15 @@ html, button, input, select, textarea,
 }
 
 .edit-input {
+    text-align: center;
+}
+
+.main-edit-input {
     width: 80px;
+}
+
+.bottom-edit-input {
+    width: 50px;
 }
 
 .player-indicator {
