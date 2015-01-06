@@ -109,14 +109,23 @@ html, button, input, select, textarea,
 
 .edit-input {
     text-align: center;
+    font-size: 60%;
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    border-bottom-width: 2px;
+    background-color: inherit;
+    /*color: #cccccc;*/
 }
 
 .main-edit-input {
     width: 80px;
+    height: 4.3rem;
 }
 
 .bottom-edit-input {
     width: 50px;
+    height: 2.6rem;
 }
 
 .player-indicator {
