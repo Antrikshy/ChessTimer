@@ -1,0 +1,116 @@
+html, body {
+    text-align: center;
+    font-weight: 100;
+    text-shadow: rgba(0,0,0,0.5) 1px 1px 2px;
+    padding: 0;
+    margin: 0;
+    cursor: default;
+}
+
+html, button, input, select, textarea,
+.pure-g [class *= "pure-u"] {
+    font-family: "Nunito", "Helvetica Neue", Helvetica, sans-serif;
+}
+
+*:not(input,textarea) {
+    user-select: none;
+    -moz-user-select: none;
+    -webkit-user-select: none;
+    -ms-user-select: none;
+    -o-user-select: none;
+}
+
+.pure-button {
+    border-radius: 25px;
+    padding: 0 0.8em;
+    box-shadow: 0 0 2px #000000;
+    border-bottom: 2px solid #474747;
+    text-shadow: 0 -1px 1px #000000;
+}
+
+.pure-menu.pure-menu-open {
+    width: auto;
+    float: right;
+    padding-right: 10px;
+}
+
+.pure-menu button {
+    text-shadow: none;
+    padding-top: 10px;
+    border: none;
+    background-color: rgba(0,0,0,0);
+    color: #292929;
+}
+
+.navbar {
+    height: 0;
+    font-weight: normal;
+    text-shadow: rgba(0,0,0,0.5) 1px 1px 0px;
+}
+
+.color-select-btn {
+    height: 40px;
+    width: 40px;
+}
+
+#pale-theme {
+    color: #853100;
+}
+
+#purple-theme {
+    color: #8e44ad;
+}
+
+#gold-theme {
+    color: #e5c100;
+}
+
+.swap-btn {
+    height: 50px;
+    margin-top: 20px;
+    font-size: 40%;
+    background-color: #292929;
+    color: #ffffff;
+}
+
+.timer-container {
+    -webkit-align-items: center;
+    align-items: center;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-justify-content: center;
+    justify-content: center;
+}
+
+.main-timer {
+    height: 70vh;
+    color: #292929;
+    background-color: #ffffff;
+}
+
+.bottom-timer {
+    height: 30vh;
+    color: #ffffff;
+    background-color: #292929;
+}
+
+.timer#cur-time {
+    font-size: 3.8rem;
+}
+
+.timer#oth-time {
+    font-size: 2.2rem;
+}
+
+.edit-input {
+    width: 80px;
+}
+
+.player-indicator {
+    font-size: 65%;
+    margin-bottom: 50px;
+}
+
+.spacebar-indicator {
+    font-size: 30%;
+}

@@ -1,0 +1,46 @@
+<html>
+<head>
+    <!-- CSS, web fonts, Pure, Font Awesome, Animate -->
+    <link href='http://fonts.googleapis.com/css?family=Nunito:300' rel='stylesheet'>
+    <link href="./frameworks/pure-release-0.5.0/pure-min.css" rel="stylesheet">
+    <link href="./frameworks/pure-release-0.5.0/grids-responsive-min.css" rel="stylesheet">
+    <link href="./frameworks/pure-release-0.5.0/grids-responsive-old-ie-min.css" rel="stylesheet">
+    <link href="./frameworks/font-awesome-4.2.0/css/font-awesome.min.css" rel="stylesheet">
+    <link href="./frameworks/animate.css" rel="stylesheet">
+    <link href="styles.css" rel="stylesheet" type="text/css">
+
+    <!-- JavaScript/jQuery -->
+    <script type="text/javascript" src="./frameworks/jquery-2.1.3.min.js"></script>
+    <script type="text/javascript" src="./frameworks/jquery.color-2.1.2.min.js"></script>
+    <script type="text/javascript" src="timer.js"></script>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Chess Timer</title>
+</head>
+<body unselectable='on'>
+    <div class="pure-menu pure-menu-open pure-menu-horizontal navbar">
+        <ul>
+            <li><button class="play-pause-btn"><i class="fa fa-play fa-2x"></i></button></li>
+            <li><button class="theme-select-btn" id="pale-theme"><i class="fa fa-circle"></i></button></li>
+            <li><button class="theme-select-btn" id="purple-theme"><i class="fa fa-circle"></i></button></li>
+            <li><button class="theme-select-btn" id="gold-theme"><i class="fa fa-circle"></i></button></li>
+            <li><button class="menu-btn"><i class="fa fa-bars fa-2x"></i></button></li>
+        </ul>
+    </div>
+    <div class="timer-container main-timer pure-g">
+        <div class="timer pure-u-1" id="cur-time">
+            <span class="time-value" id="cur-minutes">20</span> minutes, <span class="time-value" id="cur-seconds">00</span> seconds<br/>
+            <button class="pure-button swap-btn">
+                <i class="fa fa-exchange fa-lg"></i>
+                &nbsp;Turn
+            </button><br/>
+            <span class="spacebar-indicator">(Press Spacebar)</span>
+        </div>
+    </div>
+    <div class="timer-container bottom-timer pure-g">
+        <div class="timer pure-u-1" id="oth-time">
+        <span class="time-value" id="oth-minutes">20</span> minutes, <span class="time-value" id="oth-seconds">00</span> seconds
+        </div>
+    </div>
+</body>
+</html>
