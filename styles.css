@@ -29,7 +29,7 @@ html, button, input, select, textarea,
     border-radius: 25px;
     padding: 0 0.8em;
     box-shadow: 0 0 2px #000000;
-    border-bottom: 2px solid #474747;
+    border-bottom: 2px solid rgba(0,0,0,0.5);
     text-shadow: 0 -1px 1px #000000;
 }
 
@@ -58,8 +58,13 @@ html, button, input, select, textarea,
     width: 40px;
 }
 
+#red-theme {
+    color: #e52026;
+}
+
 #pale-theme {
-    color: #853100;
+    /*color: #853100;*/
+    color: #ffd98e;
 }
 
 #purple-theme {
@@ -67,7 +72,7 @@ html, button, input, select, textarea,
 }
 
 #gold-theme {
-    color: #e5c100;
+    color: #FFAA00;
 }
 
 .swap-btn {
@@ -120,12 +125,12 @@ html, button, input, select, textarea,
 
 .main-edit-input {
     width: 80px;
-    height: 4.3rem;
+    height: 4.0rem;
 }
 
 .bottom-edit-input {
     width: 50px;
-    height: 2.6rem;
+    height: 2.2rem;
 }
 
 .player-indicator {

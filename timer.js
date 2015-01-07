@@ -191,7 +191,7 @@ function changeTheme(selectedColor) {
             break;
 
         case 'pale':
-            topBackColor = '#ffc675';
+            topBackColor = '#ffd98e';
             bottomBackColor = '#853100';
             currentTheme = 'pale';
             colorsContrast = true;
@@ -205,9 +205,16 @@ function changeTheme(selectedColor) {
             break;
 
         case 'gold':
-            topBackColor = '#e6e8fa';
-            bottomBackColor = '#e5c100';
+            topBackColor = '#f5f5f5';
+            bottomBackColor = '#FFAA00';
             currentTheme = 'gold';
+            colorsContrast = true;
+            break;
+
+        case 'red':
+            topBackColor = '#ffffff';
+            bottomBackColor = '#e52026';
+            currentTheme = 'red';
             colorsContrast = true;
             break;
     }
