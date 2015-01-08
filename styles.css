@@ -74,10 +74,8 @@ html, button, input, select, textarea,
     color: #FFAA00;
 }
 
-.pure-menu.about-menu {
-    height: 100%;
-    width: 200px;
-    z-index: 1000;
+.pushy ul {
+    padding: 0;
 }
 
 .swap-btn {
