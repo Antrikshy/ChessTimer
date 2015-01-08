@@ -42,6 +42,10 @@ $(document).ready(function() {
         }
     });
 
+    $('.info-btn').click(function() {
+        
+    }); 
+
     $('.swap-btn').click(function() {
         if (!timerRunning) {
             $(this).addClass('animated shake');
@@ -86,12 +90,33 @@ $(document).ready(function() {
             $(this).click(function() {
                 var value = $(this).text();
 
-                if ($(this).hasClass('main-value')) 
-                    $(this).replaceWith('<input type="text" class="main-edit-input edit-input" placeholder="' + value.toString() + '"/>');
-                else if ($(this).hasClass('bottom-value'))
-                    $(this).replaceWith('<input type="text" class="bottom-edit-input edit-input" placeholder="' + value.toString() + '"/>');
+                // /u/dylanraga's solution
+                $(this).before("<input type='text' class='time-value' value='" + value + "' />")
+                $('input.time-value').css('width', $(this).width()).focus();
             });
         }
+    });
+
+    // /u/dylanraga's solution
+    $(document).on("blur", "input.time-value", function() {
+        var value = $(this).val();
+
+        if (value.match(/\D/g))
+            value = value.replace(/\D/g, '');
+
+        if (value === '')
+            value = "0";
+
+        $(this).next().html(decorateZeroes(value));
+        $(this).remove();
+    });
+
+    // /u/dylanraga's solution
+    $(document).on("input", "input.time-value",function(){
+        var value = $(this).val();
+
+        $(this).next().html(value);
+        $(this).css("width", $(this).next().width());
     });
 });
 
@@ -246,6 +271,9 @@ function changeTheme(selectedColor) {
 }
 
 function decorateZeroes(number) {
+    if (number == 0)
+        return "00";
+
     if (number >= 10)
         return number.toString();
 

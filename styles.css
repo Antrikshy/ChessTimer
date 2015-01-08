@@ -26,7 +26,7 @@ html, button, input, select, textarea,
 }
 
 .pure-button {
-    border-radius: 25px;
+    border-radius: 3.5vh;
     padding: 0 0.8em;
     box-shadow: 0 0 2px #000000;
     border-bottom: 2px solid rgba(0,0,0,0.5);
@@ -54,8 +54,8 @@ html, button, input, select, textarea,
 }
 
 .color-select-btn {
-    height: 40px;
-    width: 40px;
+    height: 1vh;
+    width: 1vh;
 }
 
 #red-theme {
@@ -63,8 +63,7 @@ html, button, input, select, textarea,
 }
 
 #pale-theme {
-    /*color: #853100;*/
-    color: #ffd98e;
+    color: #853100;
 }
 
 #purple-theme {
@@ -75,10 +74,16 @@ html, button, input, select, textarea,
     color: #FFAA00;
 }
 
+.pure-menu.about-menu {
+    height: 100%;
+    width: 200px;
+    z-index: 1000;
+}
+
 .swap-btn {
-    height: 50px;
-    margin-top: 20px;
-    font-size: 40%;
+    height: 7vh;
+    margin-top: 3vh;
+    font-size: 3vh;
     background-color: #292929;
     color: #ffffff;
 }
@@ -105,32 +110,28 @@ html, button, input, select, textarea,
 }
 
 .timer#cur-time {
-    font-size: 3.8rem;
+    /*font-size: 3.8rem;*/
+    font-size: 9vmin;
+    font-size: 9vm;
 }
 
 .timer#oth-time {
-    font-size: 2.2rem;
+    /*font-size: 2.2rem;*/
+    font-size: 5vmin;
+    font-size: 5vm;
 }
 
-.edit-input {
-    text-align: center;
-    font-size: 60%;
-    border-top: none;
-    border-left: none;
-    border-right: none;
-    border-bottom-width: 2px;
-    background-color: inherit;
-    /*color: #cccccc;*/
+/* redditor's solution */
+input.time-value + span.time-value {
+  display: none;
 }
 
-.main-edit-input {
-    width: 80px;
-    height: 4.0rem;
-}
-
-.bottom-edit-input {
-    width: 50px;
-    height: 2.2rem;
+/* redditor's solution */
+input.time-value:focus {
+  color: #aaa;
+  border: none;
+  border-bottom: 1px solid #2196f3;
+  outline: none;
 }
 
 .player-indicator {
