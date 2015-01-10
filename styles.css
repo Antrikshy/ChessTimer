@@ -25,6 +25,25 @@ html, button, input, select, textarea,
     -o-user-select: none;
 }
 
+.pushy {
+    padding: 10vh 0;
+    font-weight: 300;
+    color: #ffffff;
+}
+
+.pushy p {
+    padding: 0 1vw;
+    text-align: center;
+}
+
+.pushy ul {
+    padding: 0;
+}
+
+.pushy-spacer {
+    height: 30vh;
+}
+
 .pure-button {
     border-radius: 3.5vh;
     padding: 0 0.8em;
@@ -74,10 +93,6 @@ html, button, input, select, textarea,
     color: #FFAA00;
 }
 
-.pushy ul {
-    padding: 0;
-}
-
 .swap-btn {
     height: 7vh;
     margin-top: 3vh;
@@ -119,12 +134,12 @@ html, button, input, select, textarea,
     font-size: 5vm;
 }
 
-/* redditor's solution */
+/* /u/dylanraga's solution */
 input.time-value + span.time-value {
   display: none;
 }
 
-/* redditor's solution */
+/* /u/dylanraga's solution */
 input.time-value:focus {
   color: #aaa;
   border: none;

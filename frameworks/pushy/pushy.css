@@ -7,9 +7,10 @@
 
 .pushy{
     position: fixed;
-    width: 200px;
+    width: 250px;
     height: 100%;
     top: 0;
+    right: 0;
     z-index: 9999;
     background: #333332;
     font-size: 0.9em;
@@ -22,27 +23,28 @@
 }
 
 .pushy a{
-    display: block;
+    /*display: block;*/
     color: #b3b3b1;
-    padding: 15px 30px;
-    border-bottom: 1px solid rgba(0, 0, 0, .1);
-    border-top: 1px solid rgba(255, 255, 255, .1);
+    /*padding: 15px 30px;*/
+    /*border-bottom: 1px solid rgba(0, 0, 0, .1);*/
+    /*border-top: 1px solid rgba(255, 255, 255, .1);*/
     text-decoration: none;
 }
 
 .pushy a:hover{
-    background: #00b4ff;
-    color: #FFF;
+    /*background: #00b4ff;
+    color: #FFF;*/
+    text-decoration: underline;
 }
 
 /* Menu Movement */
 
-.pushy-left{
-    -webkit-transform: translate3d(-200px,0,0);
-    -moz-transform: translate3d(-200px,0,0);
-    -ms-transform: translate3d(-200px,0,0);
-    -o-transform: translate3d(-200px,0,0);
-    transform: translate3d(-200px,0,0);
+.pushy-right{
+    -webkit-transform: translate3d(250px,0,0);
+    -moz-transform: translate3d(250px,0,0);
+    -ms-transform: translate3d(250px,0,0);
+    -o-transform: translate3d(250px,0,0);
+    transform: translate3d(250px,0,0);
 }
 
 .pushy-open{
@@ -54,11 +56,11 @@
 }
 
 .container-push, .push-push{
-    -webkit-transform: translate3d(200px,0,0);
-    -moz-transform: translate3d(200px,0,0);
-    -ms-transform: translate3d(200px,0,0);
-    -o-transform: translate3d(200px,0,0);
-    transform: translate3d(200px,0,0);
+    -webkit-transform: translate3d(-250px,0,0);
+    -moz-transform: translate3d(-250px,0,0);
+    -ms-transform: translate3d(-250px,0,0);
+    -o-transform: translate3d(-250px,0,0);
+    transform: translate3d(-250px,0,0);
 }
 
 /* Menu Transitions */
@@ -84,11 +86,11 @@
     bottom: 0;
     left: 0;
     z-index: 9998;
-    background-color: rgba(0,0,0,0.5);
-    -webkit-animation: fade 500ms; 
-    -moz-animation: fade 500ms; 
-    -o-animation: fade 500ms;
-    animation: fade 500ms;
+    background-color: rgba(0,0,0,0.2);
+    -webkit-animation: fade 1000ms; 
+    -moz-animation: fade 1000ms; 
+    -o-animation: fade 1000ms;
+    animation: fade 1000ms;
 }
 
 @keyframes fade{
