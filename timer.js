@@ -42,10 +42,6 @@ $(document).ready(function() {
         }
     });
 
-    $('.info-btn').click(function() {
-        
-    }); 
-
     $('.swap-btn').click(function() {
         if (!timerRunning) {
             $(this).addClass('animated shake');
@@ -82,17 +78,19 @@ $(document).ready(function() {
             $(this).css('text-decoration', 'underline');
             $(this).css('cursor', 'text');
             
-            $(this).mouseleave(function() {
-                $(this).css('text-decoration', 'none');
-                $(this).css('cursor', 'default');
-            });
-
             $(this).click(function() {
                 var value = $(this).text();
 
                 // /u/dylanraga's solution
                 $(this).before("<input type='text' class='time-value' value='" + value + "' />")
                 $('input.time-value').css('width', $(this).width()).focus();
+            });
+
+            $(this).mouseleave(function() {
+                $(this).unbind('click');
+
+                $(this).css('text-decoration', 'none');
+                $(this).css('cursor', 'default');
             });
         }
     });

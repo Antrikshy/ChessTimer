@@ -15,9 +15,9 @@
     background: #333332;
     font-size: 0.9em;
     font-weight: bold;
-    -webkit-box-shadow: inset -10px 0 6px -9px rgba(0, 0, 0, .7);
-    -moz-box-shadow: inset -10px 0 6px -9px rgba(0, 0, 0, .7);
-    box-shadow: inset -10px 0 6px -9px rgba(0, 0, 0, .7);
+    -webkit-box-shadow: inset 5px 0px 3px -4px rgba(0, 0, 0, .7);
+    -moz-box-shadow: inset 5px 0px 3px -4px rgba(0, 0, 0, .7);
+    box-shadow: inset 5px 0px 3px -4px rgba(0, 0, 0, .7);
     overflow: auto;
     -webkit-overflow-scrolling: touch; /* enables momentum scrolling in iOS overflow elements */
 }
@@ -86,7 +86,7 @@
     bottom: 0;
     left: 0;
     z-index: 9998;
-    background-color: rgba(0,0,0,0.2);
+    background-color: rgba(0,0,0,0.15);
     -webkit-animation: fade 1000ms; 
     -moz-animation: fade 1000ms; 
     -o-animation: fade 1000ms;
