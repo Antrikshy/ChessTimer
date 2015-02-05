@@ -7,12 +7,17 @@ var whiteTurn = true;
 $(document).ready(function() {
     $('.player-indicator').hide();
     $('.play-pause-btn').hide();
+    $('.theme-select-btn').hide();
+    $('.brand').hide();
 
     $('.main-timer').addClass('animated fadeInDownBig');
     $('.bottom-timer').addClass('animated fadeInUpBig');
+    $('.navbar').addClass('animated fadeInDownBig');
 
     $('.bottom-timer').one('webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend', function() {
         $('.play-pause-btn').fadeIn(1000);
+        $('.theme-select-btn').fadeIn(1000);
+        $('.brand').fadeIn(1000);
     });
 
     $(document).keydown(function(e) {
@@ -191,6 +196,9 @@ function switchPlayer() {
     else
         $('.swap-btn').animate({color: bottomBackColor}, 200, 'linear');
     $('.swap-btn').animate({backgroundColor: mainBackColor}, 200, 'linear');
+    $('.brand small').animate({color: mainBackColor}, 200, 'linear');
+    $('.brand a').animate({color: mainBackColor}, 200, 'linear');
+    $('.menu-btn').animate({color: mainBackColor}, 200, 'linear');
     $('.main-timer').animate({color: bottomColor}, 200, 'linear');
     $('.main-timer').animate({backgroundColor: bottomBackColor}, 200, 'linear', function() {
         $('.bottom-timer').animate({color: mainColor}, 200, 'linear');
@@ -251,12 +259,18 @@ function changeTheme(selectedColor) {
     if (!colorsContrast) {
         $('.play-pause-btn').animate({color: "#ffffff"}, 200, 'linear');
         $('.swap-btn').animate({color: "#ffffff"}, 200, 'linear');
+        $('.brand small').animate({color: "#ffffff"}, 200, 'linear');
+        $('.brand a').animate({color: "#ffffff"}, 200, 'linear');
+        $('.menu-btn').animate({color: "#ffffff"}, 200, 'linear');
         $('.main-timer').animate({color: "#ffffff"}, 200, 'linear');
     }
 
     else {
         $('.play-pause-btn').animate({color: bottomBackColor}, 200, 'linear');
         $('.swap-btn').animate({color: topBackColor}, 200, 'linear');
+        $('.brand small').animate({color: bottomBackColor}, 200, 'linear');
+        $('.brand a').animate({color: bottomBackColor}, 200, 'linear');
+        $('.menu-btn').animate({color: bottomBackColor}, 200, 'linear');
         $('.main-timer').animate({color: bottomBackColor}, 200, 'linear');
     }
 
