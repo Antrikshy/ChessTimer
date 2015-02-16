@@ -196,7 +196,7 @@ function switchPlayer() {
     else
         $('.swap-btn').animate({color: bottomBackColor}, 200, 'linear');
     $('.swap-btn').animate({backgroundColor: mainBackColor}, 200, 'linear');
-    $('.brand small').animate({color: mainBackColor}, 200, 'linear');
+    $('.brand sup').animate({color: mainBackColor}, 200, 'linear');
     $('.brand a').animate({color: mainBackColor}, 200, 'linear');
     $('.menu-btn').animate({color: mainBackColor}, 200, 'linear');
     $('.main-timer').animate({color: bottomColor}, 200, 'linear');
@@ -259,7 +259,7 @@ function changeTheme(selectedColor) {
     if (!colorsContrast) {
         $('.play-pause-btn').animate({color: "#ffffff"}, 200, 'linear');
         $('.swap-btn').animate({color: "#ffffff"}, 200, 'linear');
-        $('.brand small').animate({color: "#ffffff"}, 200, 'linear');
+        $('.brand sup').animate({color: "#ffffff"}, 200, 'linear');
         $('.brand a').animate({color: "#ffffff"}, 200, 'linear');
         $('.menu-btn').animate({color: "#ffffff"}, 200, 'linear');
         $('.main-timer').animate({color: "#ffffff"}, 200, 'linear');
@@ -268,7 +268,7 @@ function changeTheme(selectedColor) {
     else {
         $('.play-pause-btn').animate({color: bottomBackColor}, 200, 'linear');
         $('.swap-btn').animate({color: topBackColor}, 200, 'linear');
-        $('.brand small').animate({color: bottomBackColor}, 200, 'linear');
+        $('.brand sup').animate({color: bottomBackColor}, 200, 'linear');
         $('.brand a').animate({color: bottomBackColor}, 200, 'linear');
         $('.menu-btn').animate({color: bottomBackColor}, 200, 'linear');
         $('.main-timer').animate({color: bottomBackColor}, 200, 'linear');
@@ -277,6 +277,8 @@ function changeTheme(selectedColor) {
     $('.swap-btn').animate({backgroundColor: bottomBackColor}, 200, 'linear');
     $('.main-timer').animate({backgroundColor: topBackColor}, 200, 'linear', function() {
         if (!colorsContrast)
+            $('.bottom-timer').animate({color: "#ffffff"}, 200, 'linear');
+        else
             $('.bottom-timer').animate({color: topBackColor}, 200, 'linear');
         $('.bottom-timer').animate({backgroundColor: bottomBackColor}, 200, 'linear');
     });
