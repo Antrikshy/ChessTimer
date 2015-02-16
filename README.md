@@ -1,9 +1,11 @@
 checkmt
 =======
 
+This is a simple front-end-only chess timer web "app". I could not find a pretty looking chess timer online, so I made my own. I plan to keep iterating and make it more mobile-friendly. Feel free to contribute and/or report issues.
+
 Current iteration always at [code.Antrikshy.com/checkmt](http://code.Antrikshy.com/checkmt)
 
-So far, I have used the following third-party libraries in this web app:
+I have used the following third-party libraries in this web app:
 * [Pure CSS](http://purecss.io)
 * [jQuery](http://jquery.com)
 * [jQ Color](https://github.com/jquery/jquery-color/) plugin
