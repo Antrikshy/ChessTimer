@@ -1,49 +1,80 @@
 <html>
 <head>
-    <!-- CSS, web fonts, Pure, Font Awesome, Animate -->
+    <!-- CSS, web fonts, Pure, Font Awesome, Animate, Pushy -->
     <link href='http://fonts.googleapis.com/css?family=Nunito:300' rel='stylesheet'>
     <link href="./frameworks/pure-release-0.5.0/pure-min.css" rel="stylesheet">
     <link href="./frameworks/pure-release-0.5.0/grids-responsive-min.css" rel="stylesheet">
     <link href="./frameworks/pure-release-0.5.0/grids-responsive-old-ie-min.css" rel="stylesheet">
     <link href="./frameworks/font-awesome-4.2.0/css/font-awesome.min.css" rel="stylesheet">
     <link href="./frameworks/animate.css" rel="stylesheet">
+    <link href="./frameworks/pushy/pushy.css" rel="stylesheet">
     <link href="styles.css" rel="stylesheet" type="text/css">
+
+    <!-- Google Analytics -->
+    <script>
+        (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+        (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+        m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+        })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+        ga('create', 'UA-54318329-3', 'auto');
+        ga('send', 'pageview');
+    </script>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>checkmt // Simple Chess Timer</title>
+</head>
+<body unselectable="on" style="-webkit-touch-callout: none; -webkit-user-select: none; -khtml-user-select: none; -moz-user-select: none; -ms-user-select: none; user-select: none;">
+    <!-- Pushy Menu -->
+    <nav class="pushy pushy-right">
+        <h1>About</h1>
+        <p>Both players start with the same amount of time to think. Each player's timer runs until they play their turn. When a player's time runs out, they lose.</p>
+        <p>Feel free to use this clock with more complex rules.</p>
+        <p>Press Spacebar or click swap button after each play. While timer is stopped, click to modify time.</p>
+        <div class="pushy-spacer"></div>
+        <p>Designed by Antriksh Yadav<br/><a href="http://twitter.com/Antrikshy">@Antrikshy</a><br/><a href="http://antrikshy.com">Antrikshy.com</a></p>
+    </nav>
+    <!-- Pushy site overlay -->
+    <div class="site-overlay"></div>
+    <!-- Rest of site -->
+    <div id="container">
+        <div class="brand">
+            <a>checkmt</a><sup>&nbsp;beta</sup>
+        </div>
+        <!-- Top bar with controls and themes -->
+        <div class="pure-menu pure-menu-open pure-menu-horizontal navbar">
+            <ul>
+                <li><button class="play-pause-btn"><i class="fa fa-play fa-2x"></i></button></li>
+                <li><button class="theme-select-btn" id="red-theme"><i class="fa fa-circle"></i></button></li>
+                <li><button class="theme-select-btn" id="pale-theme"><i class="fa fa-circle"></i></button></li>
+                <li><button class="theme-select-btn" id="purple-theme"><i class="fa fa-circle"></i></button></li>
+                <li><button class="theme-select-btn" id="gold-theme"><i class="fa fa-circle"></i></button></li>
+                <li><button class="menu-btn"><i class="fa fa-info-circle"></i></button></li>
+            </ul>
+        </div>
+        <!-- Top timer stuff -->
+        <div class="timer-container main-timer pure-g">
+            <div class="timer pure-u-1" id="cur-time">
+                <span class="time-value main-value" id="cur-minutes">20</span> minutes, <span class="time-value main-value" id="cur-seconds">00</span> seconds<br/>
+                <button class="pure-button swap-btn">
+                    <i class="fa fa-exchange fa-lg"></i>
+                    &nbsp;Turn
+                </button><br/>
+                <span class="spacebar-indicator">(Press Spacebar to start or swap)</span>
+            </div>
+        </div>
+        <!-- Bottom timer stuff -->
+        <div class="timer-container bottom-timer pure-g">
+            <div class="timer pure-u-1" id="oth-time">
+            <span class="time-value bottom-value" id="oth-minutes">20</span> minutes, <span class="time-value bottom-value" id="oth-seconds">00</span> seconds
+            </div>
+        </div>
+    </div>
 
     <!-- JavaScript/jQuery -->
     <script type="text/javascript" src="./frameworks/jquery-2.1.3.min.js"></script>
     <script type="text/javascript" src="./frameworks/jquery.color-2.1.2.min.js"></script>
+    <script type="text/javascript" src="./frameworks/pushy/pushy.min.js"></script>
     <script type="text/javascript" src="timer.js"></script>
-
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Chess Timer</title>
-</head>
-<body unselectable='on'>
-    <div class="pure-menu pure-menu-open pure-menu-horizontal navbar">
-        <ul>
-            <li><button class="play-pause-btn"><i class="fa fa-play fa-2x"></i></button></li>
-            <li><button class="theme-select-btn" id="pale-theme"><i class="fa fa-circle"></i></button></li>
-            <li><button class="theme-select-btn" id="purple-theme"><i class="fa fa-circle"></i></button></li>
-            <li><button class="theme-select-btn" id="gold-theme"><i class="fa fa-circle"></i></button></li>
-            <li><button class="menu-btn"><i class="fa fa-bars fa-2x"></i></button></li>
-        </ul>
-    </div>
-    <div class="timer-container main-timer pure-g">
-        <div class="timer pure-u-1" id="cur-time">
-            <span class="time-value main-value" id="cur-minutes">20</span> minutes, <span class="time-value main-value" id="cur-seconds">00</span> seconds<br/>
-            <button class="pure-button swap-btn">
-                <i class="fa fa-exchange fa-lg"></i>
-                &nbsp;Turn
-            </button><br/>
-            <span class="spacebar-indicator">(Press Spacebar to start or swap)</span>
-        </div>
-    </div>
-    <div class="timer-container bottom-timer pure-g">
-        <div class="timer pure-u-1" id="oth-time">
-        <span class="time-value bottom-value" id="oth-minutes">20</span> minutes, <span class="time-value bottom-value" id="oth-seconds">00</span> seconds
-        <!-- Remove this later -->
-        <br/><span class="pre-release-indicator">(This website is pre-alpha)</span>
-        <!-- Remove this later -->
-        </div>
-    </div>
 </body>
 </html>

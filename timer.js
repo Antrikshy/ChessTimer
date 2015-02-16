@@ -7,12 +7,17 @@ var whiteTurn = true;
 $(document).ready(function() {
     $('.player-indicator').hide();
     $('.play-pause-btn').hide();
+    $('.theme-select-btn').hide();
+    $('.brand').hide();
 
     $('.main-timer').addClass('animated fadeInDownBig');
     $('.bottom-timer').addClass('animated fadeInUpBig');
+    $('.navbar').addClass('animated fadeInDownBig');
 
     $('.bottom-timer').one('webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend', function() {
         $('.play-pause-btn').fadeIn(1000);
+        $('.theme-select-btn').fadeIn(1000);
+        $('.brand').fadeIn(1000);
     });
 
     $(document).keydown(function(e) {
@@ -78,20 +83,43 @@ $(document).ready(function() {
             $(this).css('text-decoration', 'underline');
             $(this).css('cursor', 'text');
             
-            $(this).mouseleave(function() {
-                $(this).css('text-decoration', 'none');
-                $(this).css('cursor', 'default');
-            });
-
             $(this).click(function() {
                 var value = $(this).text();
 
-                if ($(this).hasClass('main-value')) 
-                    $(this).replaceWith('<input type="text" class="main-edit-input edit-input" placeholder="' + value.toString() + '"/>');
-                else if ($(this).hasClass('bottom-value'))
-                    $(this).replaceWith('<input type="text" class="bottom-edit-input edit-input" placeholder="' + value.toString() + '"/>');
+                // /u/dylanraga's solution
+                $(this).before("<input type='text' class='time-value' value='" + value + "' />")
+                $('input.time-value').css('width', $(this).width()).focus();
+            });
+
+            $(this).mouseleave(function() {
+                $(this).unbind('click');
+
+                $(this).css('text-decoration', 'none');
+                $(this).css('cursor', 'default');
             });
         }
+    });
+
+    // /u/dylanraga's solution
+    $(document).on("blur", "input.time-value", function() {
+        var value = $(this).val();
+
+        if (value.match(/\D/g))
+            value = value.replace(/\D/g, '');
+
+        if (value === '')
+            value = "0";
+
+        $(this).next().html(decorateZeroes(value));
+        $(this).remove();
+    });
+
+    // /u/dylanraga's solution
+    $(document).on("input", "input.time-value",function(){
+        var value = $(this).val();
+
+        $(this).next().html(value);
+        $(this).css("width", $(this).next().width());
     });
 });
 
@@ -168,6 +196,9 @@ function switchPlayer() {
     else
         $('.swap-btn').animate({color: bottomBackColor}, 200, 'linear');
     $('.swap-btn').animate({backgroundColor: mainBackColor}, 200, 'linear');
+    $('.brand sup').animate({color: mainBackColor}, 200, 'linear');
+    $('.brand a').animate({color: mainBackColor}, 200, 'linear');
+    $('.menu-btn').animate({color: mainBackColor}, 200, 'linear');
     $('.main-timer').animate({color: bottomColor}, 200, 'linear');
     $('.main-timer').animate({backgroundColor: bottomBackColor}, 200, 'linear', function() {
         $('.bottom-timer').animate({color: mainColor}, 200, 'linear');
@@ -191,7 +222,7 @@ function changeTheme(selectedColor) {
             break;
 
         case 'pale':
-            topBackColor = '#ffc675';
+            topBackColor = '#ffd98e';
             bottomBackColor = '#853100';
             currentTheme = 'pale';
             colorsContrast = true;
@@ -205,9 +236,16 @@ function changeTheme(selectedColor) {
             break;
 
         case 'gold':
-            topBackColor = '#e6e8fa';
-            bottomBackColor = '#e5c100';
+            topBackColor = '#f5f5f5';
+            bottomBackColor = '#FFAA00';
             currentTheme = 'gold';
+            colorsContrast = true;
+            break;
+
+        case 'red':
+            topBackColor = '#ffffff';
+            bottomBackColor = '#e52026';
+            currentTheme = 'red';
             colorsContrast = true;
             break;
     }
@@ -221,24 +259,35 @@ function changeTheme(selectedColor) {
     if (!colorsContrast) {
         $('.play-pause-btn').animate({color: "#ffffff"}, 200, 'linear');
         $('.swap-btn').animate({color: "#ffffff"}, 200, 'linear');
+        $('.brand sup').animate({color: "#ffffff"}, 200, 'linear');
+        $('.brand a').animate({color: "#ffffff"}, 200, 'linear');
+        $('.menu-btn').animate({color: "#ffffff"}, 200, 'linear');
         $('.main-timer').animate({color: "#ffffff"}, 200, 'linear');
     }
 
     else {
         $('.play-pause-btn').animate({color: bottomBackColor}, 200, 'linear');
         $('.swap-btn').animate({color: topBackColor}, 200, 'linear');
+        $('.brand sup').animate({color: bottomBackColor}, 200, 'linear');
+        $('.brand a').animate({color: bottomBackColor}, 200, 'linear');
+        $('.menu-btn').animate({color: bottomBackColor}, 200, 'linear');
         $('.main-timer').animate({color: bottomBackColor}, 200, 'linear');
     }
 
     $('.swap-btn').animate({backgroundColor: bottomBackColor}, 200, 'linear');
     $('.main-timer').animate({backgroundColor: topBackColor}, 200, 'linear', function() {
         if (!colorsContrast)
+            $('.bottom-timer').animate({color: "#ffffff"}, 200, 'linear');
+        else
             $('.bottom-timer').animate({color: topBackColor}, 200, 'linear');
         $('.bottom-timer').animate({backgroundColor: bottomBackColor}, 200, 'linear');
     });
 }
 
 function decorateZeroes(number) {
+    if (number == 0)
+        return "00";
+
     if (number >= 10)
         return number.toString();
 
