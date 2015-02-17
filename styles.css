@@ -135,13 +135,11 @@ a {
 }
 
 .timer#cur-time {
-    /*font-size: 3.8rem;*/
     font-size: 9vmin;
     font-size: 9vm;
 }
 
 .timer#oth-time {
-    /*font-size: 2.2rem;*/
     font-size: 5vmin;
     font-size: 5vm;
 }
@@ -153,9 +151,11 @@ input.time-value + span.time-value {
 
 /* /u/dylanraga's solution */
 input.time-value:focus {
-  color: #aaa;
+  color: #000000;
   border: none;
-  border-bottom: 1px solid #2196f3;
+  border-bottom: 3px solid #454545;
+  border-bottom-left-radius: 6px;
+  border-bottom-right-radius: 6px;
   outline: none;
 }
 
