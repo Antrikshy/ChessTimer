@@ -160,3 +160,9 @@ input.time-value:focus {
 .spacebar-indicator {
   font-size: 0.8rem;
 }
+
+@media screen and (max-width: 768px) {
+  html, body {
+    font-size: 14pt;
+  }
+}

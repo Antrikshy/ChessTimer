@@ -5,7 +5,6 @@ var colorsContrast = true;
 var whiteTurn = true;
 
 $(document).ready(function() {
-    $('.player-indicator').hide();
     $('.play-pause-btn').hide();
     $('.theme-select-btn').hide();
     $('.brand').hide();
