@@ -1,6 +1,7 @@
 html, body {
     text-align: center;
     font-weight: 100;
+    font-size: 16pt;
     text-shadow: rgba(0,0,0,0.5) 1px 1px 2px;
     padding: 0;
     margin: 0;
@@ -63,8 +64,7 @@ a {
 }
 
 .brand {
-    font-size: 5vmin;
-    font-size: 5vm;
+    font-size: 1.8rem;
     left: 2vw;
     top: 1vh;
     position: fixed;
@@ -108,7 +108,7 @@ a {
 .swap-btn {
     height: 7vh;
     margin-top: 3vh;
-    font-size: 3vh;
+    font-size: 0.9rem;
     background-color: #292929;
     color: #ffffff;
 }
@@ -135,13 +135,11 @@ a {
 }
 
 .timer#cur-time {
-    font-size: 9vmin;
-    font-size: 9vm;
+    font-size: 2.8rem;
 }
 
 .timer#oth-time {
-    font-size: 5vmin;
-    font-size: 5vm;
+    font-size: 1.7rem;
 }
 
 /* /u/dylanraga's solution */
@@ -159,11 +157,6 @@ input.time-value:focus {
   outline: none;
 }
 
-.player-indicator {
-    font-size: 65%;
-    margin-bottom: 50px;
-}
-
 .spacebar-indicator {
-    font-size: 30%;
+  font-size: 0.8rem;
 }
